@@ -1,0 +1,95 @@
+<html>
+    <head>
+
+        <style>
+            body {
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+            .wrapper {
+                display: grid;
+                grid-template:
+                    "header header" auto
+                    "sidebar body " auto /
+                    40% 60% ;
+                    padding: 0 1rem 0 3rem;  
+                }
+                .header {
+                    grid-area: header;
+                    border-bottom: 1px solid #888;
+                }
+                .body { grid-area: body; }
+                .example {
+                    border-bottom: 1px solid #BBB;
+                    padding: 0 1rem 0 3rem;  
+                }
+                .demo { grid-area: demo; }
+                .code { grid-area: code; }
+                .sidebar {
+                    border-right: 1px solid #BBB;
+                    margin-top: 20px;
+                    padding-right: 10px;
+                    grid-area: sidebar;
+                }
+                code {
+                    padding: 2px 4px;
+                    font-size: 90%;
+                    color: #c7254e;
+                    background-color: #f9f2f4;
+                    border-radius: 4px;
+                }
+                pre {
+                    display: block;
+                    padding: 9.5px;
+                    margin: 0 0 10px;
+                    font-size: 13px;
+                    line-height: 1.42857143;
+                    color: #333;
+                    word-break: break-all;
+                    word-wrap: break-word;
+                    background-color: #f5f5f5;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                <h1>Simple Open Data</h1>
+            </div>
+            <div class="sidebar">
+                <p>Developers that want to find open data may just want to see a simple table of data with links to download.</p>
+                
+                <p>Now you can embed your own open data table. Just enter the Hub site and optionally a query or limit. </p>
+
+                <div class="code">
+                    <code><pre>
+&lt;hub-content-table 
+    search=&quot;*&quot; 
+    limit=&quot;350&quot; 
+    site=&quot;opendata.victoria.ca&quot;&gt;
+&lt;/hub-content-table&gt;
+&lt;script 
+src=&apos;https://unpkg.com/@esri/radar@0.1.12/dist/radar.js&apos;&gt;
+&lt;/script&gt;        
+</pre></code>                        
+                </div>
+            </div>            
+            <div class="body">
+
+                <div class="example">
+                    <div class="demo">
+                        <h3>Victoria Open Data</h3> 
+                        <hub-content-table search="*" limit="350" site="opendata.victoria.ca">
+                        </hub-content-table>
+                    </div>
+                </div>
+                
+            
+            </div>
+
+        </div>
+        <script src='https://unpkg.com/@esri/radar@0.1.12/dist/radar.js'></script>                
+        
+    </body>
+</html>

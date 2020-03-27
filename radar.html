@@ -1,0 +1,139 @@
+<html>
+    <head>
+
+        <style>
+            body {
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+            .wrapper {
+                display: grid;
+                grid-template:
+                    "header header" auto
+                    "sidebar body " auto /
+                    20% 80% ;
+                    padding: 0 1rem 0 3rem;  
+                }
+                .header {
+                    grid-area: header;
+                    border-bottom: 1px solid #888;
+                }
+                .body { grid-area: body; }
+                .example {
+                    border-bottom: 1px solid #BBB;
+                    display: grid;
+                    grid-template:
+                    "demo code" auto /
+                    50% 50%;
+                    padding: 0 1rem 0 3rem;  
+                }
+                .demo { grid-area: demo; }
+                .code { grid-area: code; }
+                .sidebar {
+                    border-right: 1px solid #BBB;
+                    margin-top: 20px;
+                    padding-right: 10px;
+                    grid-area: sidebar;
+                }
+                code {
+                    padding: 2px 4px;
+                    font-size: 90%;
+                    color: #c7254e;
+                    background-color: #f9f2f4;
+                    border-radius: 4px;
+                }
+                pre {
+                    display: block;
+                    padding: 9.5px;
+                    margin: 0 0 10px;
+                    font-size: 13px;
+                    line-height: 1.42857143;
+                    color: #333;
+                    word-break: break-all;
+                    word-wrap: break-word;
+                    background-color: #f5f5f5;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                }
+                textarea {
+                    height: 80px;
+                    width: 100%;
+                    margin: 10px;
+                }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                <h1>Local Radar</h1>
+            </div>
+            <div class="sidebar">
+                <p>Searching for local information shouldn't always require a map. People often just want to search for information nearby their house or other place.</p>
+                
+                <p>You can embed your own local radar. You start by configuring <a href="https://www.arcgis.com/home/webmap/viewer.html?webmap=be5753126b744043ba42e76a5381432e">a webmap</a> with layers for each topic, and then embedding this web component into your website.</p>
+
+            </div>            
+            <div class="body">
+
+                <div class="example">
+                    <div class="demo">
+                        <h3>Explore Albuquerque Schools</h3> 
+                        <hub-radar showmap=false webmap="be5753126b744043ba42e76a5381432e">
+                        </hub-radar>
+                    </div>
+                    <div class="code">
+                        <code><pre>
+&lt;hub-radar 
+webmap=&quot;be5753126b744043ba42e76a5381432e&quot;&gt;
+&lt;/hub-radar&gt;&#10;&lt;script 
+  src=&apos;https://unpkg.com/@esri/radar@0.1.12/dist/radar.js&apos;&gt;
+&lt;/script&gt;        
+</pre></code>                        
+                    </div>
+                </div>
+                
+
+                <div class="example">
+                    <div class="demo">
+                        <h3>At an Address</h3> 
+                        <hub-radar showmap=false address="100 Solano Dr SE, Albuquerque, NM, 87108" 
+                                webmap="be5753126b744043ba42e76a5381432e">
+                        </hub-radar>
+                    </div>
+                    <div class="code">
+                        <code><pre>
+&lt;hub-radar 
+showmap=false
+address=&quot;100 Solano Dr SE, Albuquerque, NM, 87108&quot; 
+webmap=&quot;be5753126b744043ba42e76a5381432e&quot;&gt;
+&lt;/hub-radar&gt;&#10;&lt;script 
+  src=&apos;https://unpkg.com/@esri/radar@0.1.12/dist/radar.js&apos;&gt;
+&lt;/script&gt;        
+</pre></code>                        
+                    </div>                    
+                </div>
+
+                <div class="example">
+                    <div class="demo">
+                        <h3>Explore DC Services</h3> 
+                        <hub-radar webmap="2e725f2d5b7640b28121af931048894c">
+                        </hub-radar>
+                    </div>
+                    <div class="code">
+                        <code><pre>
+&lt;hub-radar 
+showmap=true
+webmap=&quot;2e725f2d5b7640b28121af931048894c&quot;&gt;
+&lt;/hub-radar&gt;&#10;&lt;script 
+  src=&apos;https://unpkg.com/@esri/radar@0.1.12/dist/radar.js&apos;&gt;
+&lt;/script&gt;        
+</pre></code>                        
+                    </div>                    
+                </div>
+
+            </div>
+
+        </div>
+        <script src='https://unpkg.com/@esri/radar@0.1.12/dist/radar.js'></script>                
+        
+    </body>
+</html>
